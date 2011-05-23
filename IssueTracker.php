@@ -53,6 +53,24 @@ $wgExtensionFunctions[] = 'wfIssueTrackerSetParserHook';
 $wgHooks['LanguageGetSpecialPageAliases'][] = 'wfIssueTrackerLocalizedTitle';
 $wgHooks['ParserAfterTidy'][] = 'wfIssueTrackerDecodeOutput';
 
+$wgAvailableRights[] = 'issuetracker-list';
+$wgAvailableRights[] = 'issuetracker-view';
+$wgAvailableRights[] = 'issuetracker-add';
+$wgAvailableRights[] = 'issuetracker-edit';
+$wgAvailableRights[] = 'issuetracker-archive';
+$wgAvailableRights[] = 'issuetracker-delete';
+$wgAvailableRights[] = 'issuetracker-assign';
+$wgAvailableRights[] = 'issuetracker-assignee';
+
+$wgGroupPermissions['*']['issuetracker-list'] = true;
+$wgGroupPermissions['*']['issuetracker-view'] = true;
+$wgGroupPermissions['*']['issuetracker-add'] = true;
+$wgGroupPermissions['*']['issuetracker-edit'] = true;
+$wgGroupPermissions['*']['issuetracker-archive'] = true;
+$wgGroupPermissions['*']['issuetracker-delete'] = true;
+$wgGroupPermissions['sysop']['issuetracker-assign'] = true;
+$wgGroupPermissions['developer']['issuetracker-assignee'] = true;
+
 /**
  * A hook to register an alias for the special page
  * @return bool
