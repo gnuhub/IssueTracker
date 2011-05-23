@@ -3,3 +3,12 @@ The IssueTracker extension is a simple and powerful bug tracking and issue track
 Originally developed by Federico Cargnelutti <fedecarg@gmail.com>.
 
 Original source can be found at http://svn.fedecarg.com/repo/MediaWiki/IssueTracker/trunk/
+
+Disclaimer
+==========
+
+I make no guarantees that this is even going to work. It's someone elses project that looks abandoned, and I'm fixing it up a bit for them.
+
+After a quick look at the source code, it's not following many if any MediaWiki coding guidelines etc, and I doubt the security of it.
+
+Use this AT YOUR OWN RISK.
