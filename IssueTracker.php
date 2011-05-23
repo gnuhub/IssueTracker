@@ -44,6 +44,7 @@ $wgAutoloadClasses['IssueTracker'] = $dir . 'IssueTracker.body.php';
 
 // Let MediaWiki know about your new special page.
 $wgSpecialPages['IssueTracker'] = 'IssueTracker'; 
+$wgSpecialPageGroups['IssueTracker']="developer";
 
 // Add Extension Functions
 $wgExtensionFunctions[] = 'wfIssueTrackerSetParserHook';
