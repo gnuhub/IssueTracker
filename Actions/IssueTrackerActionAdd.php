@@ -112,10 +112,9 @@ class IssueTrackerActionAdd extends IssueTrackerAction
 	 */
 	protected function _getUsers()
 	{
-		global $IP;
+		global $IP, $issueTrackerDeveloperGroup;
 		
-		$perm = $this->_config->getPermissions('assignee');
-		$group = ($perm['group'] != '*') ? strtolower($perm['group']) : null;
+		$group = $issueTrackerDeveloperGroup;
 		
 		/** @see SpecialListusers **/
 		require_once( $IP."/includes/specials/SpecialListusers.php" );

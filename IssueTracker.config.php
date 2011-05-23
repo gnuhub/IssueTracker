@@ -13,12 +13,6 @@
 class IssueTrackerConfig
 {
 	/**
-	 * Actions.
-	 * @var array
-	 */
-	protected $_permissions = null;
-	
-	/**
 	 * Issue type array.
 	 * @var array
 	 */
@@ -30,44 +24,7 @@ class IssueTrackerConfig
 	 */
 	protected $_issueStatus = null;
 	
-	/**
-	 * ...
-	 * 
-	 * @return void
-	 */
-	public function setPermissions()
-	{
-		$perms['list']     = array('group' => '*');
-		$perms['view']     = array('group' => '*');
-		$perms['add']      = array('group' => '*');
-		$perms['edit']     = array('group' => '*');
-		$perms['archive']  = array('group' => '*');
-		$perms['delete']   = array('group' => '*');
-		$perms['assign']   = array('group' => 'sysop');
-		$perms['assignee'] = array('group' => 'sysop');
-		
-		$this->_permissions = $perms;
-	}
-	
-	/**
-	 * Returns the permission array.
-	 *
-	 * @param string $action
-	 * @return array self::$_permissions
-	 */
-	public function getPermissions($action = null)
-	{
-		if ($this->_permissions === null) {
-			$this->setPermissions();
-		}
-		
-		if ($action !== null && array_key_exists($action, $this->_permissions)) {
-			return $this->_permissions[$action];
-		} else {
-			return $this->_permissions;
-		}
-	}
-	
+
 	/**
 	 * Sets the issue type array.
 	 * 

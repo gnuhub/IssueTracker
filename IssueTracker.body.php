@@ -144,7 +144,13 @@ class IssueTracker extends SpecialPage
 			throw new Exception('Invalid file: ' . $file);
 		}
 		
-		if (array_key_exists($action, $this->_config->getPermissions())) {
+		if (array_key_exists($action, array('add'=>'add', 
+											'archive'=>'archive', 
+											'edit'=>'edit',
+											'list'=>'list',
+											'view'=>'view')
+										))
+		{
 				require_once dirname(__FILE__) . '/Actions/' . $class . '.php';
 				$controller = new $class();
 				$controller->setConfig($this->getConfig());

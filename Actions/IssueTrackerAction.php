@@ -129,27 +129,7 @@ abstract class IssueTrackerAction extends ArrayObject
 	public function hasPermission($action)
 	{
 		global $wgUser;
-		
-		if (isset($this->_acl[$action])) {
-			return $this->_acl[$action];
-		}
-		
-		$perms = $this->_config->getPermissions();
-		if ($perms[$action]['group'] == '*') {
-			$this->_acl[$action] = true;
-			return true;
-		} else {
-			$userGroups = $wgUser->getGroups();
-			foreach ($userGroups as $group) {
-				if ($group == strtolower($perms[$action]['group'])) {
-					$this->_acl[$action] = true;
-					return true;
-				}
-			}
-		}
-		
-		$this->_acl[$action] = false;
-		return false;
+		return $wgUser->isAllowed('issuetracker-' . $action);
 	}    
 	
 	/**
