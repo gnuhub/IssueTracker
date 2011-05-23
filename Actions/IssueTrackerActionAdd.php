@@ -112,11 +112,13 @@ class IssueTrackerActionAdd extends IssueTrackerAction
 	 */
 	protected function _getUsers()
 	{
+		global $IP;
+		
 		$perm = $this->_config->getPermissions('assignee');
 		$group = ($perm['group'] != '*') ? strtolower($perm['group']) : null;
 		
 		/** @see SpecialListusers **/
-		require_once 'SpecialListusers.php';
+		require_once( $IP."/includes/specials/SpecialListusers.php" );
 		
 		$users = new UsersPager($group);
 		if (! $users->mQueryDone) {
