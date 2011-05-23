@@ -22,8 +22,7 @@ $wgExtensionCredits['parserhook'][]  = array(
 	'author'        => 'Federico Cargnelutti',
 	'email'         => 'federico@kewnode.com',
 	'description'   => 'Issue Tracking System',
-	'url'           => 'http://',
-	'description'   => 'Adds <issues /> parser function for viewing and adding issues',
+	'description'   => 'Adds &lt;issues /&gt; parser function for viewing and adding issues',
 	'version'       => $wgIssueTrackerExtensionVersion
 );
 $wgExtensionCredits['specialpage'][] = array(
@@ -31,7 +30,6 @@ $wgExtensionCredits['specialpage'][] = array(
 	'author'        => 'Federico Cargnelutti',
 	'email'         => 'federico@kewnode.com',
 	'description'   => 'Issue Tracking System',
-	'url'           => 'http://',
 	'description'   => 'Adds a special page for managing issues',
 	'version'       => $wgIssueTrackerExtensionVersion
 );
