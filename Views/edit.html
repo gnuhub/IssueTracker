@@ -20,7 +20,7 @@ $(document).ready(function()	{
   <table width="530" border="0">
     <tr>
       <td width="130" align="left" valign="top"><strong><?php echo wfMsg('title'); ?>:</strong></td>
-      <td width="400"><input name="bt_title" tabindex="1" size="30" maxlength="100" id="bt_title" style="width: 415px" value="<?php echo (isset($_POST['bt_title'])) ? $_POST['bt_title'] : ''; ?>" /></td>
+      <td width="400"><input name="bt_title" tabindex="1" size="30" maxlength="100" id="bt_title" style="width: 415px" value="<?php echo (isset($_POST['bt_title'])) ? htmlspecialchars($_POST['bt_title']) : ''; ?>" /></td>
     </tr>
     <tr>
       <td align="left" valign="top"><strong><?php echo wfMsg('summary'); ?>:</strong></td>
