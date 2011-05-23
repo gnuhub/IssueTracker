@@ -113,5 +113,5 @@ div.issueClear {
   </tr>
 </table>
 <p>
-<?php if ($this->isAllowed): ?>[<a href="/index.php?title=Special:Userrights">User groups</a>]<?php endif; ?>
+<?php global $wgScriptPath;  if ($this->isAllowed) { echo "<a href='{$wgScriptPath}/index.php?title=Special:UserRights'>User groups</a>"; } ?>
 </p>
