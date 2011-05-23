@@ -40,4 +40,18 @@ $messages['en']['invalid_action']  = 'Invalid action name';
 $messages['en']['error_bt_title']  = 'Please enter a title';
 $messages['en']['not_authorized']  = 'You are not authorized to view this page';
 $messages['en']['invalid_id']      = 'Invalid issue ID';
+
+$messages['en']['specialpages-group-developer'] = "Developer tools";
+
+$messages['en']['group-developer'] = "Developers";
+$messages['en']['group-developer-member'] = "Developer";
+
+$messages['en']['right-issuetracker-list']      = "View the IssueTracker listing page";
+$messages['en']['right-issuetracker-view']      = "View IssueTracker issues";
+$messages['en']['right-issuetracker-add']       = "Add an issue to IssueTracker";
+$messages['en']['right-issuetracker-edit']      = "Edit IssueTracker issues";
+$messages['en']['right-issuetracker-archive']   = "Archive IssueTracker issues";
+$messages['en']['right-issuetracker-delete']    = "Delete IssueTracker issues";
+$messages['en']['right-issuetracker-assign']    = "Assign IssueTracker issues to a developer";
+$messages['en']['right-issuetracker-assignee']  = "Able to have issues assigned to them";
 ?>
