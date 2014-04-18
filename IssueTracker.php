@@ -78,7 +78,7 @@ $wgGroupPermissions['developer']['issuetracker-assignee'] = true;
 function wfIssueTrackerLocalizedTitle(&$specialPageArray, $code = 'en') 
 {
 	// The localized title of the special page is among the messages of the extension:
-	wfLoadExtensionMessages('IssueTracker');
+	//wfLoadExtensionMessages('IssueTracker');
 	  
 	// Convert from title in text form to DBKey and put it into the alias array:
 	$text = wfMsg('issuetracker');
