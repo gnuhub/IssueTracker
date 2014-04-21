@@ -46,6 +46,8 @@ class IssueTrackerActionEdit extends IssueTrackerActionAdd
 				'bt_type'     => $row->type,
 				'bt_status'   => $row->status,
 				'bt_assignee' => $row->assignee,
+                'bt_priority' => $row->priority,
+                'bt_severity' => $row->severity,
 			);
 		} else {
 			header('Location: ' . $this->listUrl);

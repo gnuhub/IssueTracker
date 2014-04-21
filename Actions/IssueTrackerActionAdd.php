@@ -73,6 +73,8 @@ class IssueTrackerActionAdd extends IssueTrackerAction
 		$this->typeArray = $this->_config->getIssueType();
 		$this->statusArray = $this->_config->getIssueStatus();
 		$this->formAction = $wgScript;
+        $this->severityArray = $this->_config->getIssueSeverity();
+        $this->priorityArray = $this->_config->getIssuePriority();
 	}
 
 	/**

@@ -54,4 +54,6 @@ $messages['en']['right-issuetracker-archive']   = "Archive IssueTracker issues";
 $messages['en']['right-issuetracker-delete']    = "Delete IssueTracker issues";
 $messages['en']['right-issuetracker-assign']    = "Assign IssueTracker issues to a developer";
 $messages['en']['right-issuetracker-assignee']  = "Able to have issues assigned to them";
+$messages['en']['severity']        = 'Severity';
+$messages['en']['priority']        = 'Priority';
 ?>

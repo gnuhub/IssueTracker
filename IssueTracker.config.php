@@ -23,8 +23,42 @@ class IssueTrackerConfig
 	 * @var array
 	 */
 	protected $_issueStatus = null;
-	
 
+    protected $_issueSeverity = null;
+    protected $_issuePriority = null;
+
+    public function setIssueSeverity($severity = array())
+    {
+        $severity[1] = array('name' => '1 Critical', 'default' => false);
+        $severity[2] = array('name' => '2 Major', 'default' => true);
+        $severity[3] = array('name' => '3 Minor', 'default' => false);
+        $severity[4] = array('name' => '4 Trivial', 'default' => false);
+
+        $this->_issueSeverity = $severity;
+    }
+    public function getIssueSeverity()
+    {
+        if ($this->_issueSeverity === null) {
+            $this->setIssueSeverity();
+        }
+        return $this->_issueSeverity;
+    }
+    public function setIssuePriority($priority = array())
+    {
+        $priority[1] = array('name' => '1 High', 'default' => false);
+        $priority[2] = array('name' => '2 Medium', 'default' => true);
+        $priority[3] = array('name' => '3 Low', 'default' => false);
+
+        $this->_issuePriority = $priority;
+    }
+
+    public function getIssuePriority()
+    {
+        if ($this->_issuePriority === null) {
+            $this->setIssuePriority();
+        }
+        return $this->_issuePriority;
+    }
 	/**
 	 * Sets the issue type array.
 	 * 

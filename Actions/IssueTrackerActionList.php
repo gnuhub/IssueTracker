@@ -93,6 +93,9 @@ class IssueTrackerActionList extends IssueTrackerAction
 		$this->filterBy       = $wgRequest->getVal('bt_filter_by');
 		$this->filterStatus   = $wgRequest->getVal('bt_filter_status');
 		$this->searchString   = $wgRequest->getVal('bt_search_string');;
+
+        $this->issueSeverity  = $this->_config->getIssueSeverity();
+        $this->issuePriority  = $this->_config->getIssuePriority();
 	}
 	
 	/**

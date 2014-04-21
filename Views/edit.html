@@ -48,6 +48,23 @@
       </select>
       </td>
     </tr>
+      <tr>
+          <td align="left" valign="top"><strong><?php echo wfMsg('priority'); ?>:</strong></td>
+          <td><select name="bt_priority" id="bt_priority" tabindex="5" style="width: 150px">
+              <?php foreach ($this->priorityArray as $name => $priority): ?>
+              <option value="<?php echo $name; ?>"<?php echo (isset($_POST['bt_priority']) && $_POST['bt_priority'] == $name) ? ' selected="true"' : ''; ?>><?php echo $priority['name']; ?></option>
+              <?php endforeach; ?>
+          </select></td>
+      </tr>
+
+      <tr>
+          <td align="left" valign="top"><strong><?php echo wfMsg('severity'); ?>:</strong></td>
+          <td><select name="bt_severity" id="bt_severity" tabindex="6" style="width: 150px">
+              <?php foreach ($this->severityArray as $name => $severity): ?>
+              <option value="<?php echo $name; ?>"<?php echo (isset($_POST['bt_severity']) && $_POST['bt_severity'] == $name) ? ' selected="true"' : ''; ?>><?php echo $severity['name']; ?></option>
+              <?php endforeach; ?>
+          </select></td>
+      </tr>
     <tr>
       <td align="left" valign="top"><strong><?php echo wfMsg('assignee'); ?>:</strong></td>
       <td><select name="bt_assignee" id="bt_assignee" tabindex="3" style="width: 150px">

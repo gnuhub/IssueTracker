@@ -61,6 +61,8 @@ class IssueTrackerActionView extends IssueTrackerAction
 		$this->deleteUrl   = $this->url . 'archive&bt_issueid=' . $this->issueId;
 		$this->listUrl     = $this->url . 'list';
 		$this->isLoggedIn  = $this->isLoggedIn();
+        $this->severityArray = $this->_config->getIssueSeverity();
+        $this->priorityArray = $this->_config->getIssuePriority();
 	}
 	
 	/**

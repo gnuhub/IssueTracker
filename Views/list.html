@@ -69,6 +69,8 @@ div.issueClear {
   <tr>
     <th valign="top" align="left" width="40"><b><?php echo wfMsg('id'); ?></b></th>
     <th valign="top" align="left" width="80"><b><?php echo wfMsg('type'); ?></b></th>
+      <th valign="top" align="left" width="60"><b><?php echo wfMsg('priority'); ?></b></th>
+      <th valign="top" align="left" width="60"><b><?php echo wfMsg('severity'); ?></b></th>
     <th valign="top" align="left" width="350"><b><?php echo wfMsg('title'); ?></b></th>
     <th valign="top" align="left" width="80"><b><?php echo wfMsg('status'); ?></b></th>
     <th valign="top" align="left" width="90"><b><?php echo wfMsg('assignee'); ?></b></th>
@@ -80,6 +82,8 @@ div.issueClear {
     <td><?php if ($this->hasViewPerms): ?><a href="<?php echo $this->viewUrl . $issue->issue_id; ?>"># <?php echo $issue->issue_id; ?></a><?php else: ?># <?php echo $issue->issue_id; endif; ?></td>
     <td style="background-color: #<?php echo $this->issueType[$issue->type]['colour']; ?>"><?php echo $this->issueType[$issue->type]['name']; ?></td>
     <td><span class="<?php echo $issue->status; ?>"><?php echo htmlspecialchars($issue->title, ENT_QUOTES); ?></span></td>
+      <td><?php echo $this->issuePriority[$issue->priority]['name']; ?></td>
+      <td><?php echo $this->issueSeverity[$issue->severity]['name']; ?></td>
     <td style="background-color: #<?php echo $this->issueStatus[$issue->status]['colour']; ?>"><?php echo $this->issueStatus[$issue->status]['name']; ?></td>
     <td><?php echo htmlspecialchars($issue->assignee, ENT_QUOTES); ?></td>
     <td><?php echo date("d-m-Y", strtotime($issue->priority_date)); ?></td>

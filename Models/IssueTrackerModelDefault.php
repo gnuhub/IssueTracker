@@ -89,6 +89,8 @@ class IssueTrackerModelDefault extends IssueTrackerModel
 			'user_name'     => $userName,
 			'project_name'  => $postData['bt_project'],
 			'priority_date' => date('Y-m-d H:i:s'),
+            'priority'	=> $postData['bt_priority'],
+            'severity'	=> $postData['bt_severity'],
 		);
 		
 		return $this->_dbr->insert($this->_table, $data);
@@ -110,6 +112,8 @@ class IssueTrackerModelDefault extends IssueTrackerModel
 			'type'     => $postData['bt_type'], 
 			'status'   => $postData['bt_status'], 
 			'assignee' => $postData['bt_assignee'],
+            'priority'	=> $postData['bt_priority'],
+            'severity'	=> $postData['bt_severity'],
 		);
 		
 		if ($postData['bt_status'] == 't_bug') {
