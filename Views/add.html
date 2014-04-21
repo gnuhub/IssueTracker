@@ -1,13 +1,17 @@
-<link rel="stylesheet" type="text/css" href="/skins/common/editor/html/html-skin.css"/>
+<!-- Combo-handled YUI CSS files: -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.8.0r4/build/editor/assets/skins/sam/simpleeditor.css">
+<!-- Combo-handled YUI JS files: -->
+<script type="text/javascript" src="http://yui.yahooapis.com/combo?2.8.0r4/build/yahoo-dom-event/yahoo-dom-event.js&2.8.0r4/build/container/container_core-min.js&2.8.0r4/build/element/element-min.js&2.8.0r4/build/editor/simpleeditor-min.js"></script>
 <script>
-$(document).ready(function()	{	
-	$("#html").jTagEditor({		
-		tagSet:"/skins/common/editor/html/html-tags.js",
-		tagMask:"",
-		insertOnShiftEnter:"\n\n",
-		insertOnCtrlEnter:"" 
-	});
-});
+    var myEditor = new YAHOO.widget.SimpleEditor('bt_summary', {
+        height: '300px', //150
+        width: '600px', //415
+        handleSubmit: true,
+        insert: true,
+        filterWord: true,
+        dompath: false //Turns on the bar at the bottom
+    });
+    myEditor.render();
 </script>
 <a name="Add+Issue"></a><h2><span class="editsection">[<a href="<?php echo $this->listUrl; ?>"><?php echo wfMsg('back'); ?></a>]</span> <span class="mw-headline">Add Issue</span></h2>
 <?php if (isset($this->errors)): ?>
@@ -17,19 +21,19 @@ $(document).ready(function()	{
   <input type="hidden" name="bt_action" value="<?php echo $this->action; ?>" />
   <input type="hidden" name="bt_project" value="<?php echo $this->project; ?>" />
   <input type="hidden" name="title" value="<?php echo $this->pageKey; ?>" />
-  <table width="530" border="0">
+  <table width="530" border="0" class="yui-skin-sam">
     <tr>
       <td width="130" align="left" valign="top"><strong><?php echo wfMsg('title'); ?>:</strong></td>
       <td width="400"><input name="bt_title" tabindex="1" size="30" maxlength="100" id="bt_title" style="width: 415px" value="<?php echo (isset($_POST['bt_title'])) ? $_POST['bt_title'] : ''; ?>" /></td>
     </tr>
-    <tr>
-      <td align="left" valign="top"><strong><?php echo wfMsg('summary'); ?>:</strong></td>
-      <td><textarea rows="10" cols="10" tabindex="2" id="html" class="jTagEditor" accesskey="," name="bt_summary"><?php echo (isset($_POST['bt_summary'])) ? $_POST['bt_summary'] : ''; ?></textarea></td>
-    </tr>
+      <tr>
+          <td align="left" valign="top"><strong><?php echo wfMsg('summary'); ?>:</strong></td>
+          <td><textarea rows="10" cols="10" tabindex="2" id="bt_summary" accesskey="," name="bt_summary"><?php echo (isset($_POST['bt_summary'])) ? $_POST['bt_summary'] : ''; ?></textarea></td>
+      </tr>
     <tr>
       <td align="left" valign="top"><strong><?php echo wfMsg('type'); ?>:</strong></td>
       <td><select name="bt_type" id="bt_type" tabindex="3" style="width: 150px">
-      <?php foreach ($this->typeArray as $name => $type): ?>  
+      <?php foreach ($this->typeArray as $name => $type): ?>
           <option value="<?php echo $name; ?>"<?php echo (isset($_POST['bt_type']) && $_POST['bt_type'] == $name) ? ' selected="true"' : ''; ?>><?php echo $type['name']; ?></option>
          <?php endforeach; ?>
         </select></td>
@@ -38,7 +42,7 @@ $(document).ready(function()	{
       <td align="left" valign="top"><strong><?php echo wfMsg('status'); ?>:</strong></td>
       <td>
       <select name="bt_status" id="bt_status" tabindex="4" style="width: 150px">
-      <?php foreach ($this->statusArray as $name => $status): ?>  
+      <?php foreach ($this->statusArray as $name => $status): ?>
           <option value="<?php echo $name; ?>"<?php echo (isset($_POST['bt_status']) && $_POST['bt_status'] == $name) ? ' selected="true"' : ''; ?>><?php echo $status['name']; ?></option>
          <?php endforeach; ?>
       </select>
